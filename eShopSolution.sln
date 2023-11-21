@@ -5,9 +5,15 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.WebApp", "eShopSolution.WebApp\eShopSolution.WebApp.csproj", "{64228797-69DE-40FA-9157-E3B9871E13F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopSolution.Data", "eShopSolution.Data\eShopSolution.Data.csproj", "{8F578DCF-EDEA-4685-8A4D-09BBB6A24320}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.Data", "eShopSolution.Data\eShopSolution.Data.csproj", "{8F578DCF-EDEA-4685-8A4D-09BBB6A24320}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopSolution.Application", "eShopSolution.Application\eShopSolution.Application.csproj", "{C1FDFEC2-2F67-4164-9B80-C0FF5574C736}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.Application", "eShopSolution.Application\eShopSolution.Application.csproj", "{C1FDFEC2-2F67-4164-9B80-C0FF5574C736}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.Utilities", "eShopSolution.Utilities\eShopSolution.Utilities.csproj", "{8D7DC0E4-71AE-4468-A4DA-CE2B2D588292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopSolution.ViewModel", "eShopSolution.ViewModel\eShopSolution.ViewModel.csproj", "{007F728E-B634-4094-B356-48F92AD918EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopSolution.BackendAPI", "eShopSolution.BackendAPI\eShopSolution.BackendAPI.csproj", "{969E303F-4DD9-4034-B06C-E116051172A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{C1FDFEC2-2F67-4164-9B80-C0FF5574C736}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1FDFEC2-2F67-4164-9B80-C0FF5574C736}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1FDFEC2-2F67-4164-9B80-C0FF5574C736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D7DC0E4-71AE-4468-A4DA-CE2B2D588292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D7DC0E4-71AE-4468-A4DA-CE2B2D588292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D7DC0E4-71AE-4468-A4DA-CE2B2D588292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D7DC0E4-71AE-4468-A4DA-CE2B2D588292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007F728E-B634-4094-B356-48F92AD918EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007F728E-B634-4094-B356-48F92AD918EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007F728E-B634-4094-B356-48F92AD918EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007F728E-B634-4094-B356-48F92AD918EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{969E303F-4DD9-4034-B06C-E116051172A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969E303F-4DD9-4034-B06C-E116051172A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969E303F-4DD9-4034-B06C-E116051172A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969E303F-4DD9-4034-B06C-E116051172A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
