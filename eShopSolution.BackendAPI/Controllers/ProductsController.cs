@@ -21,7 +21,7 @@ namespace eShopSolution.BackendAPI.Controllers
         }
 
         //http://localhost:port/products?pageIndex?1&pageSize=10&CategoryId=1
-        [HttpGet("{languageId}")]
+        [HttpGet("paging/{languageId}")]
         public async Task<IActionResult> GetAllPaging(string languageId, [FromQuery] GetPublicProductPagingRequest request)
         {
             var products = await _publicProductService.GetAllByCategoryId(languageId, request);
@@ -91,7 +91,7 @@ namespace eShopSolution.BackendAPI.Controllers
         }
 
         //Images
-        [HttpPost("")]
+        [HttpPost("{productId}/images")]
         public async Task<IActionResult> CreateImage(int productId, [FromForm] ProductImageCreateRequest request)
         {
             if (!ModelState.IsValid)
