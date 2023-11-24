@@ -37,5 +37,7 @@ namespace eShopSolution.Application.Catalog.Products
         Task<List<ProductImageViewModel>> GetListImages(int productId);
 
         Task<ProductImageViewModel> GetImageById(int productId, int imageId);
+
+        Task<ProductImageViewModel> GetImageById(int imageId);
     }
 }

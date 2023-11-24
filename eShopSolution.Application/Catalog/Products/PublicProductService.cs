@@ -13,6 +13,7 @@ namespace eShopSolution.Application.Catalog.Products
     public class PublicProductService : IPublicProductService
     {
         private readonly EShopDBContext _context;
+
         public PublicProductService(EShopDBContext context)
         {
             _context = context;
@@ -52,7 +53,7 @@ namespace eShopSolution.Application.Catalog.Products
                         join pt in _context.ProductTranslations on p.Id equals pt.ProductId
                         join pic in _context.ProductInCategories on p.Id equals pic.ProductId
                         join c in _context.Categories on pic.CategoryId equals c.Id
-                        where pt.LanguageId=languageId
+                        where pt.LanguageId == languageId
                         select new { p, pt, pic };
             //2. Filter
 
