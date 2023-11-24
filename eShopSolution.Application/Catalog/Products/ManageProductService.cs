@@ -189,11 +189,6 @@ namespace eShopSolution.Application.Catalog.Products
             return productViewModel;
         }
 
-        public Task<ProductViewModel> GetById(int productId, int languageId)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<ProductImageViewModel> GetImageById(int imageId)
         {
             var image = await _context.ProductImages.FindAsync(imageId);

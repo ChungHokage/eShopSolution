@@ -30,7 +30,7 @@ namespace eShopSolution.BackendAPI.Controllers
 
         //http://localhost:port/product/1
         [HttpGet("{productId}/{languageId}")]
-        public async Task<IActionResult> GetById(int productId, string languageId)
+        public async Task<IActionResult> GetById([FromForm] int productId, string languageId)
         {
             var products = await _manageProductService.GetById(productId, languageId);
             if (products == null)
@@ -133,7 +133,7 @@ namespace eShopSolution.BackendAPI.Controllers
             return Ok();
         }
 
-        [HttpPut("{productId}/images/{imageId}")]
+        [HttpDelete("{productId}/images/{imageId}")]
         public async Task<IActionResult> RemoveImage(int imageId)
         {
             if (!ModelState.IsValid)
