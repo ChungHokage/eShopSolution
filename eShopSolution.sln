@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.Application",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.Utilities", "eShopSolution.Utilities\eShopSolution.Utilities.csproj", "{8D7DC0E4-71AE-4468-A4DA-CE2B2D588292}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopSolution.ViewModel", "eShopSolution.ViewModel\eShopSolution.ViewModel.csproj", "{007F728E-B634-4094-B356-48F92AD918EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.ViewModel", "eShopSolution.ViewModel\eShopSolution.ViewModel.csproj", "{007F728E-B634-4094-B356-48F92AD918EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopSolution.BackendAPI", "eShopSolution.BackendAPI\eShopSolution.BackendAPI.csproj", "{969E303F-4DD9-4034-B06C-E116051172A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eShopSolution.BackendAPI", "eShopSolution.BackendAPI\eShopSolution.BackendAPI.csproj", "{969E303F-4DD9-4034-B06C-E116051172A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Infastructure", "1.Infastructure", "{E03EE527-A8B7-43E6-94B7-F5BAC773ACC2}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Hosts", "3.Hosts", "{CC96326B-0DC9-4DCE-9B0D-70C12CFF38C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.SolutionItems", "0.SolutionItems", "{316BF11A-29D6-469C-AE2F-0C86A5BFB085}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopSolution.AdminApp", "eShopSolution.AdminApp\eShopSolution.AdminApp.csproj", "{FC300A87-247D-4C1F-8816-36D3865A2243}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{969E303F-4DD9-4034-B06C-E116051172A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{969E303F-4DD9-4034-B06C-E116051172A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{969E303F-4DD9-4034-B06C-E116051172A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC300A87-247D-4C1F-8816-36D3865A2243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC300A87-247D-4C1F-8816-36D3865A2243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC300A87-247D-4C1F-8816-36D3865A2243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC300A87-247D-4C1F-8816-36D3865A2243}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
