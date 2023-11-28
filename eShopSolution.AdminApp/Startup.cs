@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Threading.Tasks;
+using eShopSolution.AdminApp.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,7 +26,15 @@ namespace eShopSolution.AdminApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpClient();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
+                options =>
+                {
+                    options.LoginPath = "/User/Login/";
+                    options.AccessDeniedPath = "/User/Forbidden";
+                });
             services.AddControllersWithViews();
+            services.AddTransient<IUserApiClient, UserApiClient>();
             IMvcBuilder builder = services.AddRazorPages();
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 #if DEBUG
@@ -48,8 +59,9 @@ namespace eShopSolution.AdminApp
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
+            app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();
