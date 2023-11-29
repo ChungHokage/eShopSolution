@@ -12,6 +12,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.Linq;
+using eShopSolution.Application.DTO;
+using Microsoft.EntityFrameworkCore;
 
 namespace eShopSolution.Application.System.Users
 {
@@ -59,6 +61,32 @@ namespace eShopSolution.Application.System.Users
                 signingCredentials: creds);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        public async Task<PageResult<UserViewModel>> GetUsersPaging(GetUserPagingRequest request)
+        {
+            var query = _userManager.Users;
+            if (!string.IsNullOrEmpty(request.Keyword))
+            {
+                query = query.Where(x => x.UserName.Contains(request.Keyword) || x.PhoneNumber.Contains(request.Keyword));
+            }
+            int totalRow = await query.CountAsync();
+            var data = await query.Skip((request.PageIndex - 1) * request.PageSize).Take(request.PageSize)
+                .Select(x => new UserViewModel()
+                {
+                    Email = x.Email,
+                    Lastname = x.LastName,
+                    Firstname = x.FirstName,
+                    Phonenumber = x.PhoneNumber,
+                    Username = x.UserName,
+                    Id = x.Id,
+                }).ToListAsync();
+            var pagedResult = new PageResult<UserViewModel>()
+            {
+                TotalRecord = totalRow,
+                Items = data
+            };
+            return pagedResult;
         }
 
         public async Task<bool> Register(RegisterRequest request)
