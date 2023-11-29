@@ -4,10 +4,12 @@ using eShopSolution.ViewModel.System.Users;
 
 namespace eShopSolution.AdminApp.Services
 {
-    public interface IUserApiClient
-    {
-        Task<string> Authenticate(LoginRequest request);
+	public interface IUserApiClient
+	{
+		Task<string> Authenticate(LoginRequest request);
 
-        Task<PageResult<UserViewModel>> GetUsersPaging(GetUserPagingRequest request);
-    }
+		Task<PageResult<UserViewModel>> GetUsersPaging(GetUserPagingRequest request);
+
+		Task<bool> RegisterUser(RegisterRequest request);
+	}
 }
