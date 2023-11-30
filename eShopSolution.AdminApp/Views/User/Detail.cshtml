@@ -1,0 +1,73 @@
+﻿@model eShopSolution.ViewModel.System.Users.UserViewModel
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-body">
+
+    <div class="row page-titles mx-0">
+        <div class="col p-md-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0)">Dashboard</a></li>
+                <li class="breadcrumb-item active"><a href="javascript:void(0)">Home</a></li>
+            </ol>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Basic Table</h4>
+                   
+                        <div>
+                            <dl class="row">
+                                <dt class = "col-sm-2">
+                                    @Html.DisplayNameFor(model => model.Username)
+                                </dt>
+                                <dd class = "col-sm-10">
+                                    @Html.DisplayFor(model => model.Username)
+                                </dd>
+                                <dt class = "col-sm-2">
+                                    @Html.DisplayNameFor(model => model.Firstname)
+                                </dt>
+                                <dd class = "col-sm-10">
+                                    @Html.DisplayFor(model => model.Firstname)
+                                </dd>
+                                <dt class = "col-sm-2">
+                                    @Html.DisplayNameFor(model => model.Lastname)
+                                </dt>
+                                <dd class = "col-sm-10">
+                                    @Html.DisplayFor(model => model.Lastname)
+                                </dd>
+                                <dt class = "col-sm-2">
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </dt>
+                                <dd class = "col-sm-10">
+                                    @Html.DisplayFor(model => model.Email)
+                                </dd>
+                                <dt class = "col-sm-2">
+                                    @Html.DisplayNameFor(model => model.Phonenumber)
+                                </dt>
+                                <dd class = "col-sm-10">
+                                    @Html.DisplayFor(model => model.Phonenumber)
+                                </dd>
+                                <dt class = "col-sm-2">
+                                    @Html.DisplayNameFor(model => model.Dob)
+                                </dt>
+                                <dd class = "col-sm-10">
+                                    @Html.DisplayFor(model => model.Dob)
+                                </dd>
+                            </dl>
+                        </div>
+                   
+                    <div>
+                        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
