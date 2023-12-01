@@ -38,6 +38,10 @@ namespace eShopSolution.AdminApp.Controllers
                 PageSize = pageSize
             };
             var data = await _userApiClient.GetUsersPaging(request);
+            if (TempData["result"] != null)
+            {
+                ViewBag.Success = true;
+            }
             return View(data.ResultObject);
         }
 
@@ -85,7 +89,10 @@ namespace eShopSolution.AdminApp.Controllers
 
             var result = await _userApiClient.RegisterUser(request);
             if (result.IsSuccessed)
+            {
+                TempData["result"] = "Thêm mới thành công";
                 return RedirectToAction("Index");
+            }
             ModelState.AddModelError("", result.Message);
             return View(request);
         }
@@ -132,8 +139,23 @@ namespace eShopSolution.AdminApp.Controllers
 
             var result = await _userApiClient.UpdateUser(request.Id, request);
             if (result.IsSuccessed)
+            {
+                TempData["result"] = "Cập nhật thành công";
                 return RedirectToAction("Index");
+            }
 
+            ModelState.AddModelError("", result.Message);
+            return View(request);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(UserDeleteRequest request)
+        {
+            if (!ModelState.IsValid)
+                return View();
+            var result = await _userApiClient.DeleteUser(request.Id);
+            if (result.IsSuccessed)
+                return RedirectToAction("Index");
             ModelState.AddModelError("", result.Message);
             return View(request);
         }

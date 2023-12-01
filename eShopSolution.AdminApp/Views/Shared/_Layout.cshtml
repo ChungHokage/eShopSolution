@@ -18,9 +18,12 @@
     <!-- Chartist -->
     <link rel="stylesheet" href="~/asset/plugins/chartist/css/chartist.min.css">
     <link rel="stylesheet" href="~/asset/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
+
     <!-- Custom Stylesheet -->
 	<link href="~/asset/css/style.css" rel="stylesheet" />
 	<link href="~/asset/plugins/pg-calendar/css/pignose.calendar.min.css" rel="stylesheet" />
+    <!--jQuery-->
+	@* <script src="~/asset/plugins/jquery/jquery.min.js"></script> *@
 </head>
 
 <body>
@@ -77,8 +80,9 @@
                         </div>
                         <input type="search" class="form-control" placeholder="Search Dashboard" aria-label="Search Dashboard">
                         <div class="drop-down animated flipInX d-md-none">
-                            <form action="#">
-                                <input type="text" class="form-control" placeholder="Search">
+                            <form asp-controller="User" asp-action="Index" method="get">
+                                <input type="text" class="form-control" name="keyword" placeholder="Search">
+                                <button type="submit">Tim kiem</button>
                             </form>
                         </div>
                     </div>
@@ -427,7 +431,8 @@
 	<script src="~/asset/js/settings.js"></script>
 	<script src="~/asset/js/gleek.js"></script>
 	<script src="~/asset/js/styleswitcher.js"></script>
-
+    <!--jQuery-->
+	@* <script src="~/asset/plugins/jquery/jquery.min.js"></script> *@
     <!-- Chartjs -->
     <script src="~/asset/plugins/chart.js/Chart.bundle.min.js"></script>
     <!-- Circle progress -->
@@ -446,7 +451,11 @@
     <script src="~/asset/plugins/chartist/js/chartist.min.js"></script>
     <script src="~/asset/plugins/chartist-plugin-tooltips/js/chartist-plugin-tooltip.min.js"></script>
 	<script src="~/asset/js/dashboard/dashboard-1.js"></script>
-
+    <!--Test include jquery from a standard aspnetcore app-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 
 </html>

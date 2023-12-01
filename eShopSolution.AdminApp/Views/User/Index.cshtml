@@ -21,6 +21,10 @@
     <div class="container-fluid">
         <div class="col-lg-12">
             <div class="card">
+               @*  @if (ViewBag.Success ==true)
+                {
+                    <button type="button" class="btn btn-success m-b-10 m-l-5" id="toastr-success-top-right">Success</button>
+                } *@
                 <div class="card-body">
                     <h4 class="card-title">Basic Table</h4>
                     <div class="table-responsive">
@@ -66,9 +70,14 @@
                                         </td>
                                         <td>
                                             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                                            @Html.ActionLink("Detail", "Detail", new { id=item.Id }) |
-                                            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-                                        </td>
+                                            @Html.ActionLink("Detail", "Detail", new { id=item.Id })
+                                            @* @Html.ActionLink("Delete","Delete",new{id=item.Id},
+                                                new {
+                                                    id=item.Id,
+                                                    onclick="ConfirmDelete("+item.Id+")"
+                                                })  *@
+                                                <a href="#" onclick="Delete()">Delete</a>
+                                             @*    @await Component.InvokeAsync("Modal",Model); *@
                                     </tr>
                                 }
                             </tbody>
@@ -80,3 +89,8 @@
         </div>
     </div>
 </div>
+@section Scripts{
+<script type="text/javascript">
+   
+</script>
+}
