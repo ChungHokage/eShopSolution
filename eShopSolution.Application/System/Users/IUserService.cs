@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using eShopSolution.Application.DTO;
 using eShopSolution.ViewModel.Common;
 using eShopSolution.ViewModel.System.Users;
+using Microsoft.AspNetCore.Mvc.TagHelpers.Cache;
 
 namespace eShopSolution.Application.System.Users
 {
@@ -21,5 +22,7 @@ namespace eShopSolution.Application.System.Users
         Task<ApiResult<UserViewModel>> GetById(Guid id);
 
         Task<ApiResult<bool>> Delete(Guid id);
+
+        Task<ApiResult<bool>> RoleAssign(Guid id, RoleAssignRequest request);
     }
 }

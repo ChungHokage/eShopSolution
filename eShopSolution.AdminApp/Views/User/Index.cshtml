@@ -78,6 +78,7 @@
                                                 })  *@
                                                 <a href="#" onclick="Delete()">Delete</a>
                                              @*    @await Component.InvokeAsync("Modal",Model); *@
+                                             @Html.ActionLink("Role","RoleAssign",new{id=item.Id})
                                     </tr>
                                 }
                             </tbody>

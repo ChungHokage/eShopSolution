@@ -8,7 +8,7 @@ using eShopSolution.Application.System.Users;
 using eShopSolution.Data.EF;
 using eShopSolution.Data.Entities;
 using eShopSolution.Utilities.Constant;
-
+using eShopSolution.ViewModel.System.Roles;
 using eShopSolution.ViewModel.System.Users;
 using FluentValidation;
 using FluentValidation.AspNetCore;
@@ -49,7 +49,10 @@ namespace eShopSolution.BackendAPI
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
             services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
+
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IRoleService, RoleService>();
+
             services.AddTransient<IValidator<LoginRequest>, LoginRequestValidator>();
             services.AddTransient<IValidator<RegisterRequest>, RegisterRequestValidator>();
             services.AddControllers()
